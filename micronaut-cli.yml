@@ -1,0 +1,6 @@
+applicationType: messaging
+defaultPackage: blog.geeman
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, docker, file-watch, gradle, java, java-application, junit, kafka, kafka-streams, logback, readme, shade, yaml]

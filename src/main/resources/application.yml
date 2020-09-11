@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: multiple-kafka-streams-in-micronaut-demo
+kafka:
+  bootstrap:
+    servers: localhost:9092
+
+  streams:
+    default:
+      application.id: ${micronaut.application.name}-sum-of-odd-numbers-1
+      default:
+        key.serde: org.apache.kafka.common.serialization.Serdes$IntegerSerde
+        value.serde: org.apache.kafka.common.serialization.Serdes$IntegerSerde
+    sum-of-even-numbers:
+      application.id: ${micronaut.application.name}-sum-of-even-numbers-1
+      default:
+        key.serde: org.apache.kafka.common.serialization.Serdes$IntegerSerde
+        value.serde: org.apache.kafka.common.serialization.Serdes$IntegerSerde
+    print-sum-of-even-numbers:
+      application.id: ${micronaut.application.name}-print-sum-of-even-numbers-1
+      default:
+        key.serde: org.apache.kafka.common.serialization.Serdes$IntegerSerde
+        value.serde: org.apache.kafka.common.serialization.Serdes$IntegerSerde
